@@ -54,8 +54,8 @@ router.post("/", (req, res) => {
 });
 router.delete("/:id", async (req, res) => {
   try {
-    const count = await Posts.remove(req.params.id);
-    if (count > 0) {
+    const post = await Posts.remove(req.params.id);
+    if (post > 0) {
       res.status(204).end();
     } else {
       res
